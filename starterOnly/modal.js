@@ -174,12 +174,13 @@ function modalAppear() {
   closeWindow.addEventListener('click', () => {
     modal.classList.add('hidemodal');
     modalbg.style.display = "none";
-  });
+    });
 
   closeButton.addEventListener('click', () => {
     modal.classList.add('hidemodal');
     modalbg.style.display = "none";
   })
+
 }
 
 
@@ -219,7 +220,7 @@ const isEmailValid = (email) => {
 }
 
 
-// Cette fonction vérifie le respect du format date de naissance
+// Cette fonction vérifie le respect du format dd/mm/yyyy date de naissance
 const isBirthdateValid = (birthdate) => {
   const birthReg = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
   return birthReg.test(birthdate);
