@@ -31,7 +31,8 @@ const form = document.querySelector('form');
 const selectRadio = form.querySelectorAll('input[type="radio"]');
 
 
-// Au clic du bouton submit, tous les champ doivent être remplis. Exécution de la fonction modalAppear() pour afficher la fenêtre modale aprés validation des champs.
+// Au clic du bouton submit, tous les champ doivent être remplis. Exécution de la fonction modalAppear() 
+// pour afficher la fenêtre modale aprés validation des champs.
 form.addEventListener('submit', function (e) {
 
   e.preventDefault();
