@@ -39,7 +39,6 @@ form.addEventListener('submit', function (e) {
 
   if (checkFirstname() && checkLastname() && checkEmail() && checkBirthdate() && checkQuantity() && selectFunction() && isCheckboxchecked()) {
     modalAppear();
-
   }
 
 });
@@ -57,7 +56,8 @@ const checkFirstname = () => {
     printError(firstname, `Le champ prénom doit comporter au minimum ${min} caractères.`);
   }
   else {
-    printSuccess(firstname); flag = true;
+    printSuccess(firstname);
+    flag = true;
   }
 
   return flag;
@@ -77,7 +77,8 @@ const checkLastname = () => {
     printError(lastname, `Le champ nom doit comporter au minimum ${min} caractères.`)
   }
   else {
-    printSuccess(lastname); flag = true;
+    printSuccess(lastname);
+    flag = true;
   }
   return flag;
 }
@@ -94,7 +95,8 @@ const checkEmail = () => {
     printError(email, `L\'e-mail entré n'est pas valide.`)
   }
   else {
-    printSuccess(email); flag = true;
+    printSuccess(email); 
+    flag = true;
   }
   return flag;
 }
@@ -111,7 +113,8 @@ const checkBirthdate = () => {
     printError(birthdate, `La date de naissance entrèe n\'est pas valide.`)
   }
   else {
-    printSuccess(birthdate); flag = true;
+    printSuccess(birthdate);
+    flag = true;
   }
   return flag;
 }
@@ -129,7 +132,8 @@ const checkQuantity = () => {
     printError(quantity, `Il faut entrer une valeur numérique.`)
   }
   else {
-    printSuccess(quantity); flag = true;
+    printSuccess(quantity);
+    flag = true;
   }
   return flag;
 }
