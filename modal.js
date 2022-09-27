@@ -177,12 +177,12 @@ function modalAppear() {
   modal.showModal();
 
   closeWindow.addEventListener('click', () => {
-    modal.classList.add('hidemodal');
+    modal.close();
     modalbg.style.display = "none";
     });
 
   closeButton.addEventListener('click', () => {
-    modal.classList.add('hidemodal');
+    modal.close();
     modalbg.style.display = "none";
   })
 
