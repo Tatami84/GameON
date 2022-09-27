@@ -44,7 +44,7 @@ form.addEventListener('submit', function (e) {
 });
 
 // Cette fonction valide le champ prénom
-const checkFirstname = () => { 
+const checkFirstname = () => {
   const firstnameVal = firstname.value.trim();
   let flag = false;
   const min = 2;
@@ -95,7 +95,7 @@ const checkEmail = () => {
     printError(email, `L\'e-mail entré n'est pas valide.`)
   }
   else {
-    printSuccess(email); 
+    printSuccess(email);
     flag = true;
   }
   return flag;
@@ -179,7 +179,7 @@ function modalAppear() {
   closeWindow.addEventListener('click', () => {
     modal.close();
     modalbg.style.display = "none";
-    });
+  });
 
   closeButton.addEventListener('click', () => {
     modal.close();
