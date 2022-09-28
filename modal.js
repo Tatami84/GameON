@@ -19,6 +19,11 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 function launchModal() {
   modalbg.style.display = "block";
 }
+// Événement permettant de réinitialiser le formulaire
+const allInputs = document.querySelectorAll('input');
+modalBtn.addEventListener('click', () =>{
+allInputs.forEach(input => input.value = '');
+})
 
 
 // Déclaration d'éléments inputs
