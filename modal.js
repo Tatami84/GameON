@@ -19,11 +19,6 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 function launchModal() {
   modalbg.style.display = "block";
 }
-// Événement permettant de réinitialiser le formulaire
-const allInputs = document.querySelectorAll('input');
-modalBtn.addEventListener('click', () =>{
-allInputs.forEach(input => input.value = '');
-})
 
 
 // Déclaration d'éléments inputs
@@ -35,18 +30,26 @@ const quantity = document.querySelector('#quantity');
 const form = document.querySelector('form');
 const selectRadio = form.querySelectorAll('input[type="radio"]');
 
+// modalBtn.addEventListener('click', ()=>{
+//   form.reset();
+// })
 
 // Au clic du bouton submit, tous les champ doivent être remplis. Exécution de la fonction modalAppear() 
 // pour afficher la fenêtre modale aprés validation des champs.
 form.addEventListener('submit', function (e) {
-
   e.preventDefault();
+
+  form.reset();
+});
+
+function validate(){
 
   if (checkFirstname() && checkLastname() && checkEmail() && checkBirthdate() && checkQuantity() && selectFunction() && isCheckboxchecked()) {
     modalAppear();
+
   }
 
-});
+}
 
 // Cette fonction valide le champ prénom
 const checkFirstname = () => {
@@ -190,7 +193,6 @@ function modalAppear() {
     modal.close();
     modalbg.style.display = "none";
   })
-
 }
 
 
@@ -244,4 +246,4 @@ const isQuantityValid = (quantity) => {
 
 
 
-
+ 
