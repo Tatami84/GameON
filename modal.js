@@ -29,18 +29,15 @@ const birthdate = document.querySelector('#birthdate');
 const quantity = document.querySelector('#quantity');
 const form = document.querySelector('form');
 const selectRadio = form.querySelectorAll('input[type="radio"]');
-
-// modalBtn.addEventListener('click', ()=>{
-//   form.reset();
-// })
+const selectCheck = form.querySelectorAll('input[type="checkbox"]');
 
 // Au clic du bouton submit, tous les champ doivent être remplis. Exécution de la fonction modalAppear() 
 // pour afficher la fenêtre modale aprés validation des champs.
 form.addEventListener('submit', function (e) {
   e.preventDefault();
-
-  form.reset();
+ 
 });
+
 
 function validate(){
 
@@ -48,7 +45,21 @@ function validate(){
     modalAppear();
 
   }
+}
 
+function launchForm() {
+firstname.value = '';
+lastname.value = '';
+email.value = '';
+birthdate.value = '';
+quantity.value = '';
+
+for( let i = 0; i < selectRadio.length; i++){
+  selectRadio[i].checked = '';
+}
+for( let i = 0; i < selectRadio.length; i++){
+  selectCheck[i].checked = '';
+}
 }
 
 // Cette fonction valide le champ prénom
