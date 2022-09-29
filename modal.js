@@ -30,6 +30,7 @@ const quantity = document.querySelector('#quantity');
 const form = document.querySelector('form');
 const selectRadio = form.querySelectorAll('input[type="radio"]');
 const selectCheck = form.querySelectorAll('input[type="checkbox"]');
+const inputs = form.querySelectorAll('input[class="text-control"]');
 
 // Au clic du bouton submit, tous les champ doivent être remplis. Exécution de la fonction modalAppear() 
 // pour afficher la fenêtre modale aprés validation des champs.
@@ -47,13 +48,12 @@ function validate(){
   }
 }
 
+// Fonction permettant de réinitialiser les input du formulaire
 function launchForm() {
-firstname.value = '';
-lastname.value = '';
-email.value = '';
-birthdate.value = '';
-quantity.value = '';
 
+for(let i = 0; i < inputs.length; i++){
+  inputs[i].value = '';
+}
 for( let i = 0; i < selectRadio.length; i++){
   selectRadio[i].checked = '';
 }
