@@ -11,6 +11,8 @@ function editNav() {
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
+const modalbtnclose = document.querySelector('.close');
+
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -19,6 +21,14 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 function launchModal() {
   modalbg.style.display = "block";
 }
+
+// close modal form
+function closeModal(){
+  modalbg.style.display = "none";
+}
+
+// close modal event
+modalbtnclose.addEventListener('click', closeModal);
 
 
 // Déclaration d'éléments inputs
@@ -53,14 +63,21 @@ function launchForm() {
 
 for(let i = 0; i < inputs.length; i++){
   inputs[i].value = '';
+  
 }
 for( let i = 0; i < selectRadio.length; i++){
-  selectRadio[i].checked = '';
+  selectRadio[i].checked = false; 
+ 
 }
-for( let i = 0; i < selectRadio.length; i++){
-  selectCheck[i].checked = '';
+for( let i = 0; i < selectCheck.length; i++){
+  selectCheck[i].checked = false ;
+  
 }
+
 }
+
+
+
 
 // Cette fonction valide le champ prénom
 const checkFirstname = () => {
@@ -75,6 +92,7 @@ const checkFirstname = () => {
     printError(firstname, `Le champ prénom doit comporter au minimum ${min} caractères.`);
   }
   else {
+    
     printSuccess(firstname);
     flag = true;
   }
@@ -215,19 +233,19 @@ const isFilled = value => value === '' ? false : true;
 
 // Cette fonction affiche un message d'erreur si le champ n'est pas rempli correctement grâce à un message affiché en rouge
 const printError = (input, message) => {
-  input.classList.remove('success');
-  input.classList.add('error');
+  input.classList.remove('border-success');
+  input.classList.add('border-error');
   const messError = input.nextElementSibling;
   messError.textContent = message;
-  messError.style.color = 'red';
+  messError.classList.remove('mess-success');
+  messError.classList.add('mess-error');
 }
 
 
 // Cette fonction valide le fait que le champ est correctement rempli(liseré vert sur le input en question)
 const printSuccess = (input) => {
-  input.classList.remove('error');
-  input.classList.add('success');
-
+  input.classList.remove('border-error');
+  input.classList.add('border-success');
   const messError = input.nextElementSibling;
   messError.textContent = '';
 }
@@ -255,6 +273,3 @@ const isQuantityValid = (quantity) => {
   return quantityReg.test(quantity);
 }
 
-
-
- 

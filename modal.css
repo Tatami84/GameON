@@ -587,14 +587,29 @@ footer {
   }
 }
 
-/* La classe error */
-.error {
-  border: 5px solid red;
+/* La classe error, bordure en rouge */
+.border-error {
+  border: 2px solid red;
 }
 
-/* La classe success */
-.success {
-  border: 5px solid green;
+/* La classe success, bordure en vert */
+.border-success {
+  border: 2px solid green;
+}
+
+/* La classe error, message en rouge */
+.mess-error {
+  color: red;
+}
+
+/* La classe success, message en vert */
+.mess-success {
+  color: green;
+}
+
+.text-control:focus{
+  outline-style: none ;
+  box-shadow: none;
 }
 
 
@@ -714,6 +729,23 @@ footer {
 
 
 }
+
+
+.bground {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0px;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(26, 39, 156, 0.4);
+
+}
+
+
+
 
 
 /* iPads (portrait and landscape) ----------- */
