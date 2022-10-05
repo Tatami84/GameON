@@ -20,6 +20,7 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 // launch modal form
 function launchModal() {
   modalbg.style.display = "block";
+ 
 }
 
 // close modal form
@@ -46,36 +47,35 @@ const inputs = form.querySelectorAll('input[class="text-control"]');
 // pour afficher la fenêtre modale aprés validation des champs.
 form.addEventListener('submit', function (e) {
   e.preventDefault();
- 
+  validate();
 });
 
 
 function validate(){
-
+  
   if (checkFirstname() && checkLastname() && checkEmail() && checkBirthdate() && checkQuantity() && selectFunction() && isCheckboxchecked()) {
+    launchForm();
     modalAppear();
-
   }
+  
 }
+
 
 // Fonction permettant de réinitialiser les input du formulaire
 function launchForm() {
 
-for(let i = 0; i < inputs.length; i++){
-  inputs[i].value = '';
-  
+    for(let i = 0; i < inputs.length; i++){
+      inputs[i].value = '';
+      
+    }
+    for( let i = 0; i < selectRadio.length; i++){
+      selectRadio[i].checked = false; 
+     
+    }
+    for( let i = 0; i < selectCheck.length; i++){
+      selectCheck[i].checked = false ;    
+    }
 }
-for( let i = 0; i < selectRadio.length; i++){
-  selectRadio[i].checked = false; 
- 
-}
-for( let i = 0; i < selectCheck.length; i++){
-  selectCheck[i].checked = false ;
-  
-}
-
-}
-
 
 
 
@@ -86,13 +86,14 @@ const checkFirstname = () => {
   const min = 2;
 
   if (!isFilled(firstnameVal)) {
-    printError(firstname, 'Le champ prénom doit être rempli.');
+    printError(firstname, 'Le champ prénom doit être rempli');
+    flag = false;
   }
   else if (firstnameVal.length < min) {
-    printError(firstname, `Le champ prénom doit comporter au minimum ${min} caractères.`);
+    printError(firstname, `Un minimum de ${min} caratères est requis`);
+    flag = false;
   }
-  else {
-    
+  else {   
     printSuccess(firstname);
     flag = true;
   }
@@ -183,7 +184,7 @@ const selectFunction = () => {
   for (let i = 0; i < selectRadio.length; i++) {
 
     if (selectRadio[i].checked) {
-      document.querySelector('#btn-check').textContent = '';
+      document.querySelector('#btn-check').textContent = '';  
       return true;
     }
   }
@@ -198,11 +199,10 @@ const selectFunction = () => {
 function isCheckboxchecked() {
 
   if (document.querySelector('#checkbox1').checked) {
-    document.querySelector('#missCheck').textContent = '';
+    printSuccess(document.querySelector('#checkbox1'));
     return true;
   }
-  document.querySelector('#missCheck').textContent = 'Veuillez accepter les conditions svp !';
-  document.querySelector('#missCheck').style.color = 'red';
+  printError(document.querySelector('#checkbox1'), 'Veuillez accepter les conditions svp !');
   return false;
 }
 
@@ -233,21 +233,17 @@ const isFilled = value => value === '' ? false : true;
 
 // Cette fonction affiche un message d'erreur si le champ n'est pas rempli correctement grâce à un message affiché en rouge
 const printError = (input, message) => {
-  input.classList.remove('border-success');
-  input.classList.add('border-error');
-  const messError = input.nextElementSibling;
-  messError.textContent = message;
-  messError.classList.remove('mess-success');
-  messError.classList.add('mess-error');
+  input.parentElement.dataset.error = message;
+  input.parentElement.dataset.errorVisible = true;
+  input.parentElement.dataset.successVisible = false;
 }
 
 
 // Cette fonction valide le fait que le champ est correctement rempli(liseré vert sur le input en question)
 const printSuccess = (input) => {
-  input.classList.remove('border-error');
-  input.classList.add('border-success');
-  const messError = input.nextElementSibling;
-  messError.textContent = '';
+  input.parentElement.dataset.error = '';
+  input.parentElement.dataset.errorVisible = false;
+  input.parentElement.dataset.successVisible = true;
 }
 
 

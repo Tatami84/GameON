@@ -239,6 +239,7 @@ input {
   line-height: 0.3;
   opacity: 0;
   transition: 0.3s;
+  float: left;
 }
 
 .formData[data-error-visible="true"]::after {
@@ -247,6 +248,15 @@ input {
 
 .formData[data-error-visible="true"] .text-control {
   border: 2px solid #e54858;
+}
+
+
+.formData[data-success-visible="true"]::after {
+  opacity: 1;
+}
+
+.formData[data-success-visible="true"] .text-control {
+  border: 2px solid green;
 }
 
 /* 
@@ -587,25 +597,23 @@ footer {
   }
 }
 
-/* La classe error, bordure en rouge */
-.border-error {
-  border: 2px solid red;
-}
-
 /* La classe success, bordure en vert */
 .border-success {
   border: 2px solid green;
 }
 
-/* La classe error, message en rouge */
-.mess-error {
-  color: red;
+#btn-check{
+  font-size: 0.4em;
+  color: #e54858;
+  display: block;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  text-align: right;
+  line-height: 0.3;
+  transition: 0.3s;
+  float: left;
 }
 
-/* La classe success, message en vert */
-.mess-success {
-  color: green;
-}
 
 .text-control:focus{
   outline-style: none ;
@@ -614,36 +622,38 @@ footer {
 
 
 .modal {
-  width: 60%;
-  height: 60%;
+  width: 30%;
+  height: 85%;
   background-color: black;
-  position: relative;
-  margin: 5% auto;
+  position: absolute;
   border-radius: 10px;
-  overflow: visible;
+  overflow-y: hidden;
+  top: 50%;
+  left: 50%;
+  transform:  translate(-50%, -50%);
 }
 
 .modal::backdrop {
-  background-color: black;
+  background-color: white;
 }
 
 #thank {
   color: white;
   position: absolute;
-  right: 74px;
-  bottom: 237px;
-  font-size: 50px;
+  right: 104px;
+  bottom: 291px;
+  text-align: center;
+  font-size: 35px;
 }
 
 .close-window {
   color: white;
   background-color: black;
-  font-size: 20px;
   cursor: pointer;
-  top: -62px;
-  right: -245px;
+  top: 19px;
+  right: 16px;
   border: none;
-  font-size: 46px;
+  font-size: 38px;
   position: absolute;
 }
 
@@ -653,8 +663,10 @@ footer {
   width: 180px;
   cursor: pointer;
   margin: 40% auto;
-  right: 359px;
-  bottom: -575px;
+  right: 136px;
+  bottom: -154px;
+  text-align: center;
+  font-size: 18px;
   padding: 14px;
   font-weight: bold;
   position: absolute;
@@ -681,18 +693,19 @@ footer {
 
 
   .modal {
-    width: 60%;
-    height: 100%;
-    background-color: black;
-    position: relative;
-    pointer-events: auto;
-    margin: 5% auto;
-    border-radius: 10px;
-    overflow: visible;
-    }
+  width: 30%;
+  height: 70%;
+  /* background-color: black; */
+  position: absolute;
+  border-radius: 10px;
+  overflow-y: hidden;
+  top: 50%;
+  left: 50%;
+  transform:  translate(-50%, -50%);
+        }
 
     .modal::backdrop {
-      background-color: black;
+      /* background-color: white; */
     }
     .close-window {
       color: white;
@@ -744,7 +757,9 @@ footer {
 
 }
 
-
+/* .text-control{
+  font-size: 0;
+} */
 
 
 
