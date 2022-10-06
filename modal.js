@@ -19,11 +19,11 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
 // launch modal form
 function launchModal() {
-  modalbg.style.display = "block"; 
+  modalbg.style.display = "block";
 }
 
 // close modal form
-function closeModal(){
+function closeModal() {
   modalbg.style.display = "none";
 }
 
@@ -50,30 +50,30 @@ form.addEventListener('submit', function (e) {
 });
 
 
-function validate(){
-  
+function validate() {
+
   if (checkFirstname() && checkLastname() && checkEmail() && checkBirthdate() && checkQuantity() && selectFunction() && isCheckboxchecked()) {
     launchForm();
     modalAppear();
   }
-  
+
 }
 
 
 // Fonction permettant de réinitialiser les input du formulaire
 function launchForm() {
 
-    for(let i = 0; i < inputs.length; i++){
-      inputs[i].value = '';
-      
-    }
-    for( let i = 0; i < selectRadio.length; i++){
-      selectRadio[i].checked = false; 
-     
-    }
-    for( let i = 0; i < selectCheck.length; i++){
-      selectCheck[i].checked = false ;    
-    }
+  for (let i = 0; i < inputs.length; i++) {
+    inputs[i].value = '';
+
+  }
+  for (let i = 0; i < selectRadio.length; i++) {
+    selectRadio[i].checked = false;
+
+  }
+  for (let i = 0; i < selectCheck.length; i++) {
+    selectCheck[i].checked = false;
+  }
 }
 
 
@@ -92,7 +92,7 @@ const checkFirstname = () => {
     printError(firstname, `Un minimum de ${min} caratères est requis`);
     flag = false;
   }
-  else {   
+  else {
     printSuccess(firstname);
     flag = true;
   }
@@ -183,7 +183,7 @@ const selectFunction = () => {
   for (let i = 0; i < selectRadio.length; i++) {
 
     if (selectRadio[i].checked) {
-      document.querySelector('#btn-check').textContent = '';  
+      document.querySelector('#btn-check').textContent = '';
       return true;
     }
   }
@@ -214,7 +214,7 @@ function modalAppear() {
   modal.showModal();
 
   modalbg.style.display = 'none';
-  
+
   closeWindow.addEventListener('click', () => {
     modal.close();
     modalbg.style.display = "none";
@@ -265,7 +265,7 @@ const isBirthdateValid = (birthdate) => {
   return birthReg.test(birthdate);
 }
 
-// Cette fonction test une valeur entière 
+// Cette fonction test une valeur entière comprise entre 0 et 99
 const isQuantityValid = (quantity) => {
   const quantityReg = /^([0-9]{0,99})$/;
   return quantityReg.test(quantity);

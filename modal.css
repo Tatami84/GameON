@@ -602,7 +602,7 @@ footer {
   border: 2px solid green;
 }
 
-#btn-check{
+#btn-check {
   font-size: 0.4em;
   color: #e54858;
   display: block;
@@ -615,8 +615,8 @@ footer {
 }
 
 
-.text-control:focus{
-  outline-style: none ;
+.text-control:focus {
+  outline-style: none;
   box-shadow: none;
 }
 
@@ -630,7 +630,7 @@ footer {
   overflow-y: hidden;
   top: 50%;
   left: 50%;
-  transform:  translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .modal::backdrop {
@@ -693,34 +693,36 @@ footer {
 
 
   .modal {
-  width: 100%;
-  height: 80%;
-  position: absolute;
-  border-radius: 10px;
-  overflow-y: hidden;
-  overflow-x: hidden;
-  margin: 0;
-  top: 50%;
-  left: 50%;
-  transform:  translate(-50%, -50%);
-        }
+    width: 100%;
+    height: 80%;
+    position: absolute;
+    border-radius: 10px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 
-    .modal::backdrop {
-      background-color: white;
-      opacity: 0.4;
-      
-    }
-    .close-window {
-      color: white;
-      background-color: black;
-      font-size: 20px;
-      cursor: pointer;
-      top: 6px;
-      right: 8px;
-      border: none;
-      font-size: 25px;
-      position: absolute;
-    }
+  .modal::backdrop {
+    background-color: white;
+    opacity: 0.4;
+
+  }
+
+  .close-window {
+    color: white;
+    background-color: black;
+    font-size: 20px;
+    cursor: pointer;
+    top: 6px;
+    right: 8px;
+    border: none;
+    font-size: 25px;
+    position: absolute;
+  }
+
   #thank {
     color: white;
     position: absolute;
@@ -760,17 +762,9 @@ footer {
 
 }
 
-/* .main-navbar{
- opacity: 0;
-} 
-main::backdrop{opacity: 0;}
-footer::backdrop{opacity: 0;} */
 
 
-
-
-
-/* iPads (portrait and landscape) ----------- */
+/* ...................................iPads (portrait and landscape)................................ */
 
 
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
@@ -784,9 +778,11 @@ footer::backdrop{opacity: 0;} */
     border-radius: 10px;
     overflow: visible;
   }
+
   .modal::backdrop {
     background-color: black;
   }
+
   #thank {
     color: white;
     position: absolute;
@@ -795,6 +791,7 @@ footer::backdrop{opacity: 0;} */
     font-size: 35px;
     text-align: center;
   }
+
   .close-window {
     color: white;
     background-color: black;
